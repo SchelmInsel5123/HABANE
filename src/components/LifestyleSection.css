@@ -1,0 +1,106 @@
+.lifestyle {
+  padding: var(--section-padding) 0;
+  min-height: 100vh;
+}
+
+.lifestyle__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.lifestyle__img-col {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.lifestyle__img-col-1 {
+  height: 420px;
+}
+.lifestyle__img-col-2 {
+  height: 420px;
+  margin-top: 60px;
+}
+.lifestyle__img-col-3 {
+  height: 420px;
+}
+
+.lifestyle__img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.lifestyle__img-wrap img {
+  width: 100%;
+  height: 130%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.lifestyle__img-wrap:hover img {
+  transform: scale(1.05);
+}
+
+.lifestyle__content {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.lifestyle__personas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.persona-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.persona-badge:hover {
+  border-color: var(--color-border-gold);
+  transform: translateY(-2px);
+  background: rgba(201, 169, 110, 0.06);
+}
+
+.persona-badge__icon {
+  font-size: 1.2rem;
+}
+
+.persona-badge__label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .lifestyle__gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .lifestyle__img-col-1,
+  .lifestyle__img-col-2,
+  .lifestyle__img-col-3 {
+    height: 280px;
+    margin-top: 0;
+  }
+}

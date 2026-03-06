@@ -1,0 +1,93 @@
+// Product data for the HABÄNE webshop
+const products = [
+  {
+    id: 'P1',
+    slug: 'reiser-pro',
+    name: 'Reiser Pro',
+    tagline: 'The Original AI Suitcase',
+    price: '€1,299',
+    originalPrice: '€1,499',
+    badge: 'Best Seller',
+    shortDescription: 'The flagship HABÄNE suitcase with AI-powered autonomous follow technology, premium German engineering, and smart navigation.',
+    heroImage: '/Paralex_Media/1.png',
+    images: [
+      '/Paralex_Media/1.png',
+      '/Paralex_Media/2.png',
+      '/Paralex_Media/3.png',
+      '/Media/suitcase-wheels.png',
+      '/Media/handle-detail.png',
+      '/Media/polycarbonate-texture.png',
+    ],
+    story: {
+      headline: 'Born From a Simple Idea',
+      paragraphs: [
+        'The Reiser Pro was born at TH-OWL in Germany, from a simple frustration: why do we still drag our luggage around like it\'s the 1970s?',
+        'Our founding team of engineers and designers spent over 3 years perfecting the autonomous follow system. Using a combination of LiDAR sensors, computer vision, and proprietary AI algorithms, the Reiser Pro can track its owner through the most chaotic airport terminals.',
+        'Every curve of the polycarbonate shell was wind-tunnel tested. Every sensor placement was optimized through thousands of real-world trials. The result is a suitcase that doesn\'t just follow you — it anticipates where you\'re going.',
+      ],
+    },
+    specs: [
+      { label: 'Capacity', value: '42L' },
+      { label: 'Weight', value: '4.8 kg' },
+      { label: 'Battery', value: '12h' },
+      { label: 'Speed', value: '8 km/h' },
+      { label: 'Sensors', value: '50+' },
+      { label: 'Charging', value: 'USB-C Fast' },
+    ],
+    features: [
+      'AI autonomous follow mode',
+      'Obstacle avoidance navigation',
+      'Anti-theft biometric lock',
+      'TSA-approved battery system',
+      'Premium polycarbonate shell',
+      'Silent omni-directional wheels',
+    ],
+    color: '#c9a96e',
+  },
+  {
+    id: 'P2',
+    slug: 'reiser-lite',
+    name: 'Reiser Lite',
+    tagline: 'Smart Travel, Lighter Footprint',
+    price: '€899',
+    originalPrice: '€1,099',
+    badge: 'New',
+    shortDescription: 'A lighter, more compact version of the Reiser with core AI-assist technology — perfect for weekend trips and carry-on travel.',
+    heroImage: '/Media/suitcase-hero.png',
+    images: [
+      '/Media/suitcase-hero.png',
+      '/Media/suitcase-interior.png',
+      '/Media/suitcase-material.png',
+      '/Media/suitcase-lock.png',
+      '/Media/zipper-detail.png',
+      '/Media/wheels-detail.png',
+    ],
+    story: {
+      headline: 'Engineered to Go Everywhere',
+      paragraphs: [
+        'Not every trip needs a full-size suitcase. But every trip deserves smart technology. That\'s why we created the Reiser Lite.',
+        'Compact enough for overhead bins, smart enough to navigate on its own. The Lite uses the same core AI follow-system as the Pro, optimized for a smaller, lighter frame that meets every airline\'s carry-on requirements.',
+        'The interior was designed with input from over 500 frequent travelers. Every pocket, every compartment, every zipper placement was tested and refined until packing became effortless.',
+      ],
+    },
+    specs: [
+      { label: 'Capacity', value: '35L' },
+      { label: 'Weight', value: '3.2 kg' },
+      { label: 'Battery', value: '10h' },
+      { label: 'Speed', value: '7 km/h' },
+      { label: 'Sensors', value: '32' },
+      { label: 'Charging', value: 'USB-C' },
+    ],
+    features: [
+      'AI follow-assist mode',
+      'Carry-on compliant size',
+      'Smart lock with app control',
+      'Removable battery system',
+      'Lightweight aluminum frame',
+      'Built-in USB charging port',
+    ],
+    color: '#8aaed0',
+  },
+];
+
+export default products;

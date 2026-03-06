@@ -1,0 +1,166 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero__description {
+  max-width: 480px;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* Product */
+.hero__product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__product-img {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+}
+
+.hero__product-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 1;
+}
+
+.hero__product-reflection {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 1;
+}
+
+/* Glow positions */
+.hero__glow-1 {
+  top: 10%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+}
+
+.hero__glow-2 {
+  bottom: 10%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+}
+
+/* Gradient accent line */
+.hero__gradient-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+  opacity: 0.3;
+}
+
+/* Scroll indicator */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+}
+
+.hero__scroll-indicator span {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (max-width: 968px) {
+  .hero__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero__text {
+    align-items: center;
+  }
+  
+  .hero__product {
+    order: -1;
+  }
+  
+  .hero__product-img {
+    max-width: 280px;
+  }
+  
+  .hero__ctas {
+    justify-content: center;
+  }
+  
+  .hero__description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__product-img {
+    max-width: 220px;
+  }
+}

@@ -1,0 +1,96 @@
+/* ===== PAGE LOADER ===== */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 70% at 50% 50%,
+    #030303 0%,
+    #080808 30%,
+    #0d0d0d 55%,
+    #111111 70%,
+    #161210 85%,
+    #1a1410 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), visibility 1s;
+}
+
+.page-loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* SVG container */
+.loader-svg {
+  width: clamp(320px, 70vw, 820px);
+  height: auto;
+  overflow: visible;
+}
+
+/* Each letter — drawn via stroke animation */
+.loader-letter {
+  font-family: 'Outfit', sans-serif;
+  font-size: 140px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  fill: transparent;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation:
+    drawLetter 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    fillLetter 0.8s ease forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drawLetter {
+  0% {
+    stroke-dashoffset: 600;
+    stroke: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    stroke: #ffffff;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: #ffffff;
+  }
+}
+
+@keyframes fillLetter {
+  0%, 70% {
+    fill: transparent;
+  }
+  100% {
+    fill: #ffffff;
+    stroke: rgba(255, 255, 255, 0.1);
+    filter: drop-shadow(0 0 12px rgba(201, 169, 110, 0.2));
+  }
+}
+
+/* Tagline under the text */
+.loader-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold-light, #d4bf8a);
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: taglineFadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) 5.5s forwards;
+}
+
+@keyframes taglineFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

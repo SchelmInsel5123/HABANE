@@ -1,0 +1,58 @@
+.cta-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cta__glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  pointer-events: none;
+}
+
+.cta__glow-ring-2 {
+  width: 900px;
+  height: 900px;
+  border-color: rgba(201, 169, 110, 0.05);
+}
+
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta__desc {
+  max-width: 500px;
+}
+
+.cta__btn-wrapper {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta__btn {
+  padding: 20px 56px;
+  font-size: 1.1rem;
+  will-change: transform;
+}
