@@ -19,7 +19,7 @@ const features = [
     ),
     title: 'AI Motion Assist',
     description: 'Your suitcase moves with you automatically, eliminating the need to pull or carry it.',
-    image: getImageUrl('/Media/suitcase-wheels.png')
+    image: getImageUrl('/New_Media/Gemini_Generated_Image_66p71h66p71h66p7.png')
   },
   {
     id: 'navigation',
@@ -32,7 +32,7 @@ const features = [
     ),
     title: 'Intelligent Navigation',
     description: 'Advanced sensors help HABÄNE navigate crowded environments smoothly and safely.',
-    image: getImageUrl('/Media/handle-detail.png')
+    image: getImageUrl('/New_Media/Gemini_Generated_Image_qov4qgqov4qgqov4.png')
   },
   {
     id: 'design',
@@ -45,7 +45,7 @@ const features = [
     ),
     title: 'Premium German Design',
     description: 'Minimalist design engineered for durability, performance, and modern travel.',
-    image: getImageUrl('/Media/polycarbonate-texture.png')
+    image: getImageUrl('/New_Media/Gemini_Generated_Image_z8bzk9z8bzk9z8bz.png')
   },
   {
     id: 'smart',
@@ -57,7 +57,7 @@ const features = [
     ),
     title: 'Smart Travel Experience',
     description: 'Technology and travel combine to create the most convenient luggage ever built.',
-    image: getImageUrl('/Media/suitcase-lock.png')
+    image: getImageUrl('/New_Media/Gemini_Generated_Image_z9ksuuz9ksuuz9ks.png')
   }
 ];
 

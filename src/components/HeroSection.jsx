@@ -125,7 +125,7 @@ export default function HeroSection() {
 
         <div ref={productRef} className="hero__product">
           <div className="hero__product-glow"></div>
-          <img src={getImageUrl('/Paralex_Media/1.png')} alt="HABÄNE AI Suitcase" className="hero__product-img" />
+          <img src={getImageUrl('/New_Media/Gemini_Generated_Image_3j04eg3j04eg3j04.png')} alt="HABÄNE AI Suitcase" className="hero__product-img" />
           <div className="hero__product-reflection"></div>
         </div>
       </div>

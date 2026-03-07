@@ -99,7 +99,7 @@ export default function BenefitsSection() {
         </div>
 
         <div className="benefits__image-wrapper">
-          <img src={getImageUrl('/Media/airport-lifestyle.png')} alt="Travel lifestyle" />
+          <img src={getImageUrl('/New_Media/Gemini_Generated_Image_3j04eg3j04eg3j04.png')} alt="Travel lifestyle" />
           <div className="benefits__image-overlay"></div>
         </div>
       </div>
