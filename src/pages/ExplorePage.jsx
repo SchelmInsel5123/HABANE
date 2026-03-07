@@ -77,7 +77,7 @@ export default function ExplorePage() {
         </Link>
         <span className="label">The Collection</span>
         <h1 className="headline-xl">
-          Explore <span className="gold-text">HABÄNE</span>
+          Explore <span className="gold-text">agrandir grand font</span>
         </h1>
         <p className="body-lg explore__subtitle">
           Discover our range of AI-powered smart luggage — engineered for the modern traveler.

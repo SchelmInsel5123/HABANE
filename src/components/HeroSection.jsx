@@ -104,9 +104,43 @@ export default function HeroSection() {
             Companion
           </h1>
           <p className="hero__reveal body-lg hero__description">
-            Meet HABÄNE — the intelligent suitcase that moves with you, assists you, 
+            Meet agrandir grand font — the intelligent suitcase that moves with you, assists you,
             and transforms the way you travel. Powered by advanced AI motion technology.
           </p>
+
+          <div className="hero__reveal hero__features">
+            <div className="hero__feature">
+              <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+              <span>AI-Powered Motion</span>
+            </div>
+            <div className="hero__feature">
+              <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <span>Smart Lock System</span>
+            </div>
+            <div className="hero__feature">
+              <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+                <line x1="16" y1="8" x2="2" y2="22"/>
+                <line x1="17.5" y1="15" x2="9" y2="15"/>
+              </svg>
+              <span>Durable Polycarbonate</span>
+            </div>
+            <div className="hero__feature">
+              <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span>10-Hour Battery Life</span>
+            </div>
+          </div>
+
           <div className="hero__reveal hero__ctas">
             <Link to="/Explore" className="btn btn-primary" id="hero-shop-btn">
               Shop Now
@@ -125,7 +159,7 @@ export default function HeroSection() {
 
         <div ref={productRef} className="hero__product">
           <div className="hero__product-glow"></div>
-          <img src={getImageUrl('/Paralex_Media/1.png')} alt="HABÄNE AI Suitcase" className="hero__product-img" />
+          <img src={getImageUrl('/Paralex_Media/1.png')} alt="agrandir grand font AI Suitcase" className="hero__product-img" />
           <div className="hero__product-reflection"></div>
         </div>
       </div>

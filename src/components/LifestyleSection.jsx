@@ -87,7 +87,7 @@ export default function LifestyleSection() {
             <span className="gold-text">Modern Travel</span>
           </h2>
           <p className="body-lg">
-            Whether you're navigating airports, hotels, or city streets, HABÄNE moves 
+            Whether you're navigating airports, hotels, or city streets, agrandir grand font moves
             with you — making every trip smoother, lighter, and smarter.
           </p>
 

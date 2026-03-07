@@ -10,7 +10,7 @@ const steps = [
   {
     number: '01',
     title: 'Power On',
-    description: 'Turn on HABÄNE with one tap.',
+    description: 'Turn on agrandir grand font with one tap.',
     image: getImageUrl('/Paralex_Media/1.png'),
   },
   {

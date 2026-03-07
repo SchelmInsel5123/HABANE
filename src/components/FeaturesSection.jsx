@@ -31,7 +31,7 @@ const features = [
       </svg>
     ),
     title: 'Intelligent Navigation',
-    description: 'Advanced sensors help HABÄNE navigate crowded environments smoothly and safely.',
+    description: 'Advanced sensors help agrandir grand font navigate crowded environments smoothly and safely.',
     image: getImageUrl('/Media/handle-detail.png')
   },
   {

@@ -74,7 +74,7 @@ export default function CTASection() {
           <span className="gold-text">Future of Travel</span>
         </h2>
         <p className="body-lg cta__desc">
-          The era of dragging luggage is over. Upgrade your travel experience with HABÄNE.
+          The era of dragging luggage is over. Upgrade your travel experience with agrandir grand font.
         </p>
         <div
           className="cta__btn-wrapper"
