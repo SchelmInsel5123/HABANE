@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './FeaturesSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +19,7 @@ const features = [
     ),
     title: 'AI Motion Assist',
     description: 'Your suitcase moves with you automatically, eliminating the need to pull or carry it.',
-    image: '/Media/suitcase-wheels.png'
+    image: getImageUrl('/Media/suitcase-wheels.png')
   },
   {
     id: 'navigation',
@@ -31,7 +32,7 @@ const features = [
     ),
     title: 'Intelligent Navigation',
     description: 'Advanced sensors help HABÄNE navigate crowded environments smoothly and safely.',
-    image: '/Media/handle-detail.png'
+    image: getImageUrl('/Media/handle-detail.png')
   },
   {
     id: 'design',
@@ -44,7 +45,7 @@ const features = [
     ),
     title: 'Premium German Design',
     description: 'Minimalist design engineered for durability, performance, and modern travel.',
-    image: '/Media/polycarbonate-texture.png'
+    image: getImageUrl('/Media/polycarbonate-texture.png')
   },
   {
     id: 'smart',
@@ -56,7 +57,7 @@ const features = [
     ),
     title: 'Smart Travel Experience',
     description: 'Technology and travel combine to create the most convenient luggage ever built.',
-    image: '/Media/suitcase-lock.png'
+    image: getImageUrl('/Media/suitcase-lock.png')
   }
 ];
 

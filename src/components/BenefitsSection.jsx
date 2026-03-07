@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './BenefitsSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -98,7 +99,7 @@ export default function BenefitsSection() {
         </div>
 
         <div className="benefits__image-wrapper">
-          <img src="/Media/airport-lifestyle.png" alt="Travel lifestyle" />
+          <img src={getImageUrl('/Media/airport-lifestyle.png')} alt="Travel lifestyle" />
           <div className="benefits__image-overlay"></div>
         </div>
       </div>

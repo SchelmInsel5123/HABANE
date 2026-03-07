@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import getImageUrl from '../lib/imageUtils';
 import './Footer.css';
 
 export default function Footer() {
@@ -20,7 +21,7 @@ export default function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="/Media/LOGOHABANE.png" alt="HABÄNE" className="footer__logo-img" />
+              <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="HABÄNE" className="footer__logo-img" />
               <span className="footer__logo-text">HABÄNE</span>
             </div>
             <p className="body-md footer__tagline">

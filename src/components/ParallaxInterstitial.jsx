@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './ParallaxInterstitial.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -252,7 +253,7 @@ export default function ParallaxInterstitial() {
 
         {/* Central product */}
         <div className="pi__product">
-          <img src="/Paralex_Media/3.png" alt="HABÄNE Technology" className="pi__product-img" />
+          <img src={getImageUrl('/Paralex_Media/3.png')} alt="HABÄNE Technology" className="pi__product-img" />
         </div>
       </div>
 

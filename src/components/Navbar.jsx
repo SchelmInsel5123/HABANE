@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import getImageUrl from '../lib/imageUtils';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -17,7 +18,7 @@ export default function Navbar() {
     <nav ref={navRef} className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <a href="#" className="navbar__logo" id="nav-logo">
-          <img src="/Media/LOGOHABANE.png" alt="HABÄNE" className="navbar__logo-img" />
+          <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="HABÄNE" className="navbar__logo-img" />
           <span className="navbar__logo-text">HABÄNE</span>
         </a>
 

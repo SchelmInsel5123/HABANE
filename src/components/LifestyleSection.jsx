@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './LifestyleSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -64,17 +65,17 @@ export default function LifestyleSection() {
         <div className="lifestyle__gallery">
           <div className="lifestyle__img-col lifestyle__img-col-1">
             <div className="lifestyle__img-wrap lifestyle__img-1">
-              <img src="/Media/cobblestone-street.png" alt="Travel lifestyle" />
+              <img src={getImageUrl('/Media/cobblestone-street.png')} alt="Travel lifestyle" />
             </div>
           </div>
           <div className="lifestyle__img-col lifestyle__img-col-2">
             <div className="lifestyle__img-wrap lifestyle__img-2">
-              <img src="/Media/suitcase-lifestyle.png" alt="Airport lifestyle" />
+              <img src={getImageUrl('/Media/suitcase-lifestyle.png')} alt="Airport lifestyle" />
             </div>
           </div>
           <div className="lifestyle__img-col lifestyle__img-col-3">
             <div className="lifestyle__img-wrap lifestyle__img-3">
-              <img src="/Media/hotel-room.png" alt="Hotel lifestyle" />
+              <img src={getImageUrl('/Media/hotel-room.png')} alt="Hotel lifestyle" />
             </div>
           </div>
         </div>

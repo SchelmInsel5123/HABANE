@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './HowItWorksSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,19 +11,19 @@ const steps = [
     number: '01',
     title: 'Power On',
     description: 'Turn on HABÄNE with one tap.',
-    image: '/Paralex_Media/1.png',
+    image: getImageUrl('/Paralex_Media/1.png'),
   },
   {
     number: '02',
     title: 'AI Detection',
     description: 'The AI system detects and tracks your movement.',
-    image: '/Paralex_Media/3.png',
+    image: getImageUrl('/Paralex_Media/3.png'),
   },
   {
     number: '03',
     title: 'Follow Mode',
     description: 'Your suitcase intelligently follows you through your journey.',
-    image: '/Paralex_Media/2.png',
+    image: getImageUrl('/Paralex_Media/2.png'),
   }
 ];
 

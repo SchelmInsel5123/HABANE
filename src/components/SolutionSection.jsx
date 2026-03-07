@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './SolutionSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -81,7 +82,7 @@ export default function SolutionSection() {
 
         <div className="solution__product">
           <div className="solution__product-frame">
-            <img src="/Paralex_Media/2.png" alt="HABÄNE - 3/4 view" className="solution__product-img" />
+            <img src={getImageUrl('/Paralex_Media/2.png')} alt="HABÄNE - 3/4 view" className="solution__product-img" />
           </div>
         </div>
       </div>

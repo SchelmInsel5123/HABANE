@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import getImageUrl from '../lib/imageUtils';
 import './HeroSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -124,7 +125,7 @@ export default function HeroSection() {
 
         <div ref={productRef} className="hero__product">
           <div className="hero__product-glow"></div>
-          <img src="/Paralex_Media/1.png" alt="HABÄNE AI Suitcase" className="hero__product-img" />
+          <img src={getImageUrl('/Paralex_Media/1.png')} alt="HABÄNE AI Suitcase" className="hero__product-img" />
           <div className="hero__product-reflection"></div>
         </div>
       </div>
