@@ -40,7 +40,7 @@
 .navbar__logo-text {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--color-text);
 }
