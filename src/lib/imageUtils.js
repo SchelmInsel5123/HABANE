@@ -12,6 +12,8 @@ const getImageUrl = (path) => {
     storagePath = `media/${path.replace('/Media/', '')}`;
   } else if (path.startsWith('/Paralex_Media/')) {
     storagePath = `paralex/${path.replace('/Paralex_Media/', '')}`;
+  } else if (path.startsWith('/New_Media/')) {
+    storagePath = `new_media/${path.replace('/New_Media/', '')}`;
   }
 
   const { data } = supabase.storage

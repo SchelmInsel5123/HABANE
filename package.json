@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "seed": "node --env-file=.env scripts/upload-images.js"
+    "seed": "node --env-file=.env scripts/upload-images.js",
+    "upload-new-media": "node --env-file=.env scripts/upload-new-media.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
