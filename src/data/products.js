@@ -1,4 +1,4 @@
-// Product data for the agrandir grand font webshop
+// Product data for the HABÄNE webshop
 const products = [
   {
     id: 'P1',
@@ -8,7 +8,7 @@ const products = [
     price: '€1,299',
     originalPrice: '€1,499',
     badge: 'Best Seller',
-    shortDescription: 'The flagship agrandir grand font suitcase with AI-powered autonomous follow technology, premium German engineering, and smart navigation.',
+    shortDescription: 'The flagship HABÄNE suitcase with AI-powered autonomous follow technology, premium German engineering, and smart navigation.',
     heroImage: '/Paralex_Media/1.png',
     images: [
       '/Paralex_Media/1.png',

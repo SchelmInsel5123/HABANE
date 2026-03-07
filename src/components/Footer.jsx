@@ -22,8 +22,8 @@ export default function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="agrandir grand font" className="footer__logo-img" />
-              <span className="footer__logo-text">agrandir grand font</span>
+              <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="HABÄNE" className="footer__logo-img" />
+              <span className="footer__logo-text">HABÄNE</span>
             </div>
             <p className="body-md footer__tagline">
               The world's first true AI travel companion.<br/>
@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copyright">
-            © 2026 agrandir grand font. All rights reserved.
+            © 2026 HABÄNE. All rights reserved.
           </p>
           <div className="footer__socials">
             <a href="#" className="footer__social" aria-label="Instagram">

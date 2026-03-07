@@ -94,7 +94,7 @@ export default function BenefitsSection() {
           </ul>
 
           <p className="body-lg benefits__tagline">
-            With agrandir grand font, you focus on the journey — not your luggage.
+            With HABÄNE, you focus on the journey — not your luggage.
           </p>
         </div>
 

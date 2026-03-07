@@ -104,7 +104,7 @@ export default function HeroSection() {
             Companion
           </h1>
           <p className="hero__reveal body-lg hero__description">
-            Meet agrandir grand font — the intelligent suitcase that moves with you, assists you,
+            Meet HABÄNE — the intelligent suitcase that moves with you, assists you,
             and transforms the way you travel. Powered by advanced AI motion technology.
           </p>
 
@@ -159,7 +159,7 @@ export default function HeroSection() {
 
         <div ref={productRef} className="hero__product">
           <div className="hero__product-glow"></div>
-          <img src={getImageUrl('/Paralex_Media/1.png')} alt="agrandir grand font AI Suitcase" className="hero__product-img" />
+          <img src={getImageUrl('/Paralex_Media/1.png')} alt="HABÄNE AI Suitcase" className="hero__product-img" />
           <div className="hero__product-reflection"></div>
         </div>
       </div>

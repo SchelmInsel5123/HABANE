@@ -253,7 +253,7 @@ export default function ParallaxInterstitial() {
 
         {/* Central product */}
         <div className="pi__product">
-          <img src={getImageUrl('/Paralex_Media/3.png')} alt="agrandir grand font Technology" className="pi__product-img" />
+          <img src={getImageUrl('/Paralex_Media/3.png')} alt="HABÄNE Technology" className="pi__product-img" />
         </div>
       </div>
 

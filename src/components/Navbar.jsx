@@ -18,8 +18,8 @@ export default function Navbar() {
     <nav ref={navRef} className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <a href="#" className="navbar__logo" id="nav-logo">
-          <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="agrandir grand font" className="navbar__logo-img" />
-          <span className="navbar__logo-text">agrandir grand font</span>
+          <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="HABÄNE" className="navbar__logo-img" />
+          <span className="navbar__logo-text">HABÄNE</span>
         </a>
 
         <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>

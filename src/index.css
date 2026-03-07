@@ -1,4 +1,40 @@
-/* ===== agrandir grand font V3 — DESIGN SYSTEM ===== */
+/* ===== HABÄNE V3 — DESIGN SYSTEM ===== */
+
+/* Agrandir Grand Font Family */
+@font-face {
+  font-family: 'Agrandir';
+  src: url('https://api.fontshare.com/v2/font/agrandir/400') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('https://api.fontshare.com/v2/font/agrandir/500') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir';
+  src: url('https://api.fontshare.com/v2/font/agrandir/700') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Apply Agrandir font to brand name elements */
+.navbar__logo-text,
+.footer__logo-text,
+.hero__reveal h1,
+.headline-xl,
+.headline-lg,
+.headline-md,
+.headline-sm {
+  font-family: 'Agrandir', 'Outfit', sans-serif !important;
+}
 
 /* --- CSS Reset & Base --- */
 *, *::before, *::after {

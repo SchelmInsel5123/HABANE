@@ -64,14 +64,14 @@ export default function SolutionSection() {
         <div className="solution__text">
           <span className="label">The Solution</span>
           <h2 className="headline-lg">
-            Meet <span className="gold-text">agrandir grand font</span>
+            Meet <span className="gold-text">HABÄNE</span>
           </h2>
           <p className="body-lg">
-            agrandir grand font is not just luggage. It's an AI-powered travel companion designed
+            HABÄNE is not just luggage. It's an AI-powered travel companion designed
             to move with you and simplify every step of your journey.
           </p>
           <p className="body-lg">
-            Powered by intelligent motion technology, agrandir grand font follows your movement
+            Powered by intelligent motion technology, HABÄNE follows your movement
             and adapts to your pace — giving you true hands-free travel.
           </p>
           <div className="solution__badge">
@@ -82,7 +82,7 @@ export default function SolutionSection() {
 
         <div className="solution__product">
           <div className="solution__product-frame">
-            <img src={getImageUrl('/Paralex_Media/2.png')} alt="agrandir grand font - 3/4 view" className="solution__product-img" />
+            <img src={getImageUrl('/Paralex_Media/2.png')} alt="HABÄNE - 3/4 view" className="solution__product-img" />
           </div>
         </div>
       </div>
