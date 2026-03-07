@@ -2,23 +2,38 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import products from '../data/products';
+import { getProductBySlug } from '../services/productService';
 import './ProductDetail.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ProductDetail() {
   const { productId } = useParams();
-  const product = products.find(p => p.id === productId);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
   const pageRef = useRef(null);
   const productViewerRef = useRef(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    async function loadProduct() {
+      try {
+        const data = await getProductBySlug(productId);
+        setProduct(data);
+      } catch (error) {
+        console.error('Failed to load product:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadProduct();
+  }, [productId]);
 
+  useEffect(() => {
     if (!product) return;
+
+    window.scrollTo(0, 0);
 
     const ctx = gsap.context(() => {
       // Entry animations
@@ -98,6 +113,16 @@ export default function ProductDetail() {
       clearTimeout(timeout);
     };
   }, [isSpinning]);
+
+  if (loading) {
+    return (
+      <div className="pd-notfound">
+        <div className="container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <p className="body-lg">Loading product...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (

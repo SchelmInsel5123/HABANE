@@ -1,26 +1,42 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import products from '../data/products';
+import { getAllProducts } from '../services/productService';
 import './ExplorePage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ExplorePage() {
   const pageRef = useRef(null);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    async function loadProducts() {
+      try {
+        const data = await getAllProducts();
+        setProducts(data);
+      } catch (error) {
+        console.error('Failed to load products:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadProducts();
+  }, []);
+
+  useEffect(() => {
+    if (loading || products.length === 0) return;
+
     window.scrollTo(0, 0);
 
     const ctx = gsap.context(() => {
-      // Header animations
       gsap.fromTo('.explore__header > *',
         { y: 50, opacity: 0 },
         { y: 0, opacity: 1, stagger: 0.12, duration: 1, ease: 'expo.out', delay: 0.2 }
       );
 
-      // Product cards stagger in
       gsap.fromTo('.product-card-explore',
         { y: 80, opacity: 0, scale: 0.95 },
         {
@@ -34,15 +50,24 @@ export default function ExplorePage() {
     }, pageRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [loading, products]);
+
+  if (loading) {
+    return (
+      <div ref={pageRef} className="explore-page">
+        <div className="grid-bg"></div>
+        <div className="explore__header container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <p className="body-lg">Loading products...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={pageRef} className="explore-page">
-      {/* Background */}
       <div className="grid-bg"></div>
       <div className="explore__glow glow-dot glow-dot-gold"></div>
 
-      {/* Header */}
       <div className="explore__header container">
         <Link to="/" className="explore__back">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -59,7 +84,6 @@ export default function ExplorePage() {
         </p>
       </div>
 
-      {/* Product Grid */}
       <div className="explore__grid container">
         {products.map((product) => (
           <Link
