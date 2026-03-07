@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import getImageUrl from '../lib/imageUtils';
 import './Footer.css';
 
@@ -42,7 +43,7 @@ export default function Footer() {
             <a href="#" className="footer__link">Terms & Conditions</a>
             <a href="#" className="footer__link">Privacy Policy</a>
             <a href="#" className="footer__link">Returns & Refunds</a>
-            <a href="#" className="footer__link">Impressum</a>
+            <Link to="/impressum" className="footer__link">Impressum</Link>
           </div>
 
           <div className="footer__newsletter">

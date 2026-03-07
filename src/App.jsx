@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ExplorePage from './pages/ExplorePage';
 import ProductDetail from './pages/ProductDetail';
+import ImpressumPage from './pages/ImpressumPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/Explore" element={<ExplorePage />} />
         <Route path="/Explore/:productId" element={<ProductDetail />} />
+        <Route path="/impressum" element={<ImpressumPage />} />
       </Routes>
     </BrowserRouter>
   );
