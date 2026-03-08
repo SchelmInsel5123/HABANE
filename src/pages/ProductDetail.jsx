@@ -13,8 +13,41 @@ export default function ProductDetail() {
   const [loading, setLoading] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [email, setEmail] = useState('');
+  const [subscribeStatus, setSubscribeStatus] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
   const pageRef = useRef(null);
   const productViewerRef = useRef(null);
+
+  const handleNewsletterSubmit = async (e, source = 'product-detail') => {
+    e.preventDefault();
+    setIsSubscribing(true);
+    setSubscribeStatus('');
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/newsletter-subscribe`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, source }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribeStatus('success');
+        setEmail('');
+      } else {
+        setSubscribeStatus('error');
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setSubscribeStatus('error');
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   useEffect(() => {
     async function loadProduct() {
@@ -204,19 +237,39 @@ export default function ProductDetail() {
             <span className="pd__savings">Save {Math.round((1 - parseInt(product.price.replace(/[^\d]/g, '')) / parseInt(product.originalPrice.replace(/[^\d]/g, ''))) * 100)}%</span>
           </div>
 
-          <div className="pd__actions">
-            <button className="btn btn-primary pd__buy-btn" id="product-buy-btn">
-              Add to Cart
-              <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-              </svg>
-            </button>
-            <button className="btn btn-secondary pd__wishlist-btn" id="product-wishlist-btn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-              </svg>
-            </button>
-          </div>
+          <form onSubmit={handleNewsletterSubmit} className="pd__newsletter-form">
+            <div className="pd__newsletter-input-group">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="pd__newsletter-input"
+                disabled={isSubscribing}
+              />
+              <button
+                type="submit"
+                className="btn btn-primary pd__newsletter-btn"
+                disabled={isSubscribing}
+              >
+                {isSubscribing ? 'Subscribing...' : 'Get Updated'}
+                <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+              </button>
+            </div>
+            {subscribeStatus === 'success' && (
+              <p className="pd__newsletter-message pd__newsletter-message--success">
+                Thanks! We'll notify you when available.
+              </p>
+            )}
+            {subscribeStatus === 'error' && (
+              <p className="pd__newsletter-message pd__newsletter-message--error">
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </form>
 
           <div className="pd__quick-specs">
             {product.specs.slice(0, 4).map((s, i) => (
@@ -313,13 +366,41 @@ export default function ProductDetail() {
       {/* CTA */}
       <section className="pd__cta section">
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 className="headline-lg">Ready to Experience <span className="gold-text">{product.name}</span>?</h2>
+          <h2 className="headline-lg">Interested in <span className="gold-text">{product.name}</span>?</h2>
           <p className="body-lg" style={{ maxWidth: '480px', margin: '16px auto 32px' }}>
-            Join the future of travel. Free shipping worldwide.
+            Be the first to know when we launch. Join our newsletter for exclusive updates.
           </p>
-          <button className="btn btn-primary" style={{ padding: '18px 48px', fontSize: '1.05rem' }} id="product-cta-buy">
-            Order Now — {product.price}
-          </button>
+          <form onSubmit={(e) => handleNewsletterSubmit(e, 'product-detail-cta')} style={{ maxWidth: '500px', margin: '0 auto' }}>
+            <div className="pd__newsletter-input-group">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="pd__newsletter-input"
+                disabled={isSubscribing}
+              />
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={isSubscribing}
+                style={{ padding: '18px 40px', fontSize: '1.05rem' }}
+              >
+                {isSubscribing ? 'Subscribing...' : 'Get Updated'}
+              </button>
+            </div>
+            {subscribeStatus === 'success' && (
+              <p className="pd__newsletter-message pd__newsletter-message--success" style={{ marginTop: '16px' }}>
+                Thanks! We'll notify you when available.
+              </p>
+            )}
+            {subscribeStatus === 'error' && (
+              <p className="pd__newsletter-message pd__newsletter-message--error" style={{ marginTop: '16px' }}>
+                Something went wrong. Please try again.
+              </p>
+            )}
+          </form>
         </div>
       </section>
     </div>
