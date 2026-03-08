@@ -83,11 +83,16 @@
 .navbar__actions {
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
 .navbar__cta {
   padding: 10px 28px;
   font-size: 0.82rem;
+}
+
+.navbar__cta--preregist {
+  padding: 10px 22px;
 }
 
 /* Burger */

@@ -46,6 +46,7 @@ export default function Navbar() {
         </div>
 
         <div className="navbar__actions">
+          <Link to="/newsletter" className="btn btn-secondary navbar__cta navbar__cta--preregist" id="nav-preregist-btn">Pre-Regist.</Link>
           <Link to="/Explore" className="btn btn-primary navbar__cta" id="nav-shop-btn">Shop Now</Link>
         </div>
 
