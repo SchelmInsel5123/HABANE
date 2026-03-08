@@ -42,58 +42,22 @@
   color: var(--color-text-secondary);
 }
 
-.pd__newsletter-form {
-  width: 100%;
-}
-
-.pd__newsletter-input-group {
+.pd__newsletter-cta {
   display: flex;
+  flex-direction: column;
   gap: 12px;
+  align-items: flex-start;
   width: 100%;
-}
-
-.pd__newsletter-input {
-  flex: 1;
-  padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  color: var(--color-text-primary);
-  font-size: 15px;
-  transition: all 0.3s ease;
-}
-
-.pd__newsletter-input:focus {
-  outline: none;
-  border-color: var(--color-gold);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.pd__newsletter-input::placeholder {
-  color: var(--color-text-muted);
-}
-
-.pd__newsletter-input:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .pd__newsletter-btn {
   white-space: nowrap;
 }
 
-.pd__newsletter-message {
-  margin-top: 12px;
-  font-size: 14px;
-  text-align: left;
-}
-
-.pd__newsletter-message--success {
-  color: #4ade80;
-}
-
-.pd__newsletter-message--error {
-  color: #ef4444;
+.pd__newsletter-hint {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
 }
 
 /* Hero */

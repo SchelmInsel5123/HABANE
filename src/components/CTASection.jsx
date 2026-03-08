@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,40 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function CTASection() {
   const sectionRef = useRef(null);
   const btnRef = useRef(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [email, setEmail] = useState('');
-  const [subscribeStatus, setSubscribeStatus] = useState('');
-  const [isSubscribing, setIsSubscribing] = useState(false);
-
-  const handleNewsletterSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubscribing(true);
-    setSubscribeStatus('');
-
-    try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/newsletter-subscribe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, source: 'cta-section' }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubscribeStatus('success');
-        setEmail('');
-      } else {
-        setSubscribeStatus('error');
-      }
-    } catch (error) {
-      console.error('Newsletter subscription error:', error);
-      setSubscribeStatus('error');
-    } finally {
-      setIsSubscribing(false);
-    }
-  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -103,45 +69,24 @@ export default function CTASection() {
       <div className="container cta__content">
         <span className="label">Stay Updated</span>
         <h2 className="headline-xl">
-          Be First to Know<br/>
-          <span className="gold-text">When We Launch</span>
+          Sei der Erste<br/>
+          <span className="gold-text">Beim Launch</span>
         </h2>
         <p className="body-lg cta__desc">
-          Join our exclusive newsletter and be the first to experience HABÄNE when we launch.
+          Melde dich für unseren exklusiven Newsletter an und erlebe HABÄNE als Erster.
         </p>
-        <form onSubmit={handleNewsletterSubmit} className="cta__newsletter-form">
-          <div className="cta__newsletter-input-group">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="cta__newsletter-input"
-              disabled={isSubscribing}
-            />
-            <button
-              type="submit"
-              className="btn btn-primary cta__newsletter-btn"
-              disabled={isSubscribing}
-            >
-              {isSubscribing ? 'Subscribing...' : 'Get Updated'}
-              <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-              </svg>
-            </button>
-          </div>
-          {subscribeStatus === 'success' && (
-            <p className="cta__newsletter-message cta__newsletter-message--success">
-              Thanks for subscribing! We'll keep you updated.
-            </p>
-          )}
-          {subscribeStatus === 'error' && (
-            <p className="cta__newsletter-message cta__newsletter-message--error">
-              Something went wrong. Please try again.
-            </p>
-          )}
-        </form>
+        <div
+          className="cta__btn-wrapper"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Link ref={btnRef} to="/newsletter" className="btn btn-primary cta__btn">
+            Zum Newsletter
+            <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );

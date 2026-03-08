@@ -11,6 +11,7 @@ import ExplorePage from './pages/ExplorePage';
 import ProductDetail from './pages/ProductDetail';
 import ImpressumPage from './pages/ImpressumPage';
 import ContactPage from './pages/ContactPage';
+import NewsletterPage from './pages/NewsletterPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="/Explore/:productId" element={<ProductDetail />} />
         <Route path="/impressum" element={<ImpressumPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/newsletter" element={<NewsletterPage />} />
       </Routes>
     </BrowserRouter>
   );
