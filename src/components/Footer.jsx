@@ -40,7 +40,7 @@ export default function Footer() {
 
           <div className="footer__links-group">
             <h4 className="footer__links-title">Legal</h4>
-            <a href="#" className="footer__link">Terms & Conditions</a>
+            <Link to="/terms" className="footer__link">Terms & Conditions</Link>
             <Link to="/privacy" className="footer__link">Privacy Policy</Link>
             <a href="#" className="footer__link">Returns & Refunds</a>
             <Link to="/impressum" className="footer__link">Impressum</Link>
