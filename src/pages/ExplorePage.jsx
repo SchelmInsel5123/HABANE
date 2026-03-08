@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from '../hooks/useTranslation';
 import { getAllProducts } from '../services/productService';
 import './ExplorePage.css';
 
@@ -11,6 +12,7 @@ export default function ExplorePage() {
   const pageRef = useRef(null);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     async function loadProducts() {
@@ -73,14 +75,14 @@ export default function ExplorePage() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
-          Back to Home
+          {t('productDetail.backToShop')}
         </Link>
-        <span className="label">The Collection</span>
+        <span className="label">{t('explore.title')}</span>
         <h1 className="headline-xl">
-          Explore <span className="gold-text">HABÄNE</span>
+          {t('footer.explore')} <span className="gold-text">HABÄNE</span>
         </h1>
         <p className="body-lg explore__subtitle">
-          Discover our range of AI-powered smart luggage — engineered for the modern traveler.
+          {t('explore.subtitle')}
         </p>
       </div>
 
@@ -114,7 +116,7 @@ export default function ExplorePage() {
                   <span className="product-card-explore__original-price">{product.originalPrice}</span>
                 </div>
                 <span className="product-card-explore__cta">
-                  View Details
+                  {t('explore.viewDetails')}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>

@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../hooks/useTranslation';
 import getImageUrl from '../lib/imageUtils';
 import './Footer.css';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -26,43 +28,41 @@ export default function Footer() {
               <span className="footer__logo-text">HABÄNE</span>
             </div>
             <p className="body-md footer__tagline">
-              The world's first true AI travel companion.<br/>
-              Engineered in Germany.
+              {t('footer.tagline')}
             </p>
           </div>
 
           <div className="footer__links-group">
-            <h4 className="footer__links-title">Company</h4>
-            <a href="#" className="footer__link">About Us</a>
-            <Link to="/contact" className="footer__link">Contact</Link>
-            <a href="#" className="footer__link">Press</a>
+            <h4 className="footer__links-title">{t('footer.company')}</h4>
+            <a href="#" className="footer__link">{t('footer.about')}</a>
+            <Link to="/contact" className="footer__link">{t('footer.contact')}</Link>
+            <Link to="/newsletter" className="footer__link">{t('footer.newsletter')}</Link>
           </div>
 
           <div className="footer__links-group">
-            <h4 className="footer__links-title">Legal</h4>
-            <Link to="/terms" className="footer__link">Terms & Conditions</Link>
-            <Link to="/privacy" className="footer__link">Privacy Policy</Link>
-            <a href="#" className="footer__link">Returns & Refunds</a>
-            <Link to="/impressum" className="footer__link">Impressum</Link>
+            <h4 className="footer__links-title">{t('footer.legal')}</h4>
+            <Link to="/terms" className="footer__link">{t('footer.terms')}</Link>
+            <Link to="/privacy" className="footer__link">{t('footer.privacy')}</Link>
+            <Link to="/impressum" className="footer__link">{t('footer.impressum')}</Link>
           </div>
 
           <div className="footer__newsletter">
-            <h4 className="footer__links-title">Newsletter</h4>
+            <h4 className="footer__links-title">{t('footer.newsletter')}</h4>
             <p className="body-md footer__newsletter-desc">
-              Get <span className="gold-text" style={{WebkitTextFillColor: 'var(--color-gold)'}}>10% off</span> your first order and be the first to hear about new releases.
+              {t('newsletter.subtitle')}
             </p>
             <form className="footer__form" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                placeholder={t('newsletter.placeholder')}
                 className="footer__input"
                 id="footer-email"
                 required
               />
               <button type="submit" className="btn btn-primary footer__submit" id="footer-subscribe-btn">
-                {subscribed ? '✓' : 'Subscribe'}
+                {subscribed ? '✓' : t('newsletter.button')}
               </button>
             </form>
           </div>
@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="footer__bottom">
           <div className="footer__copyright-wrapper">
             <p className="footer__copyright">
-              © 2026 HABÄNE. All rights reserved.
+              © 2026 HABÄNE. {t('footer.rights')}
             </p>
             <p className="footer__disclaimer">
               Product visuals may represent prototypes or conceptual designs.
