@@ -7,10 +7,42 @@ import './LifestyleSection.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const personas = [
-  { icon: '✈️', label: 'Business travelers' },
-  { icon: '🌍', label: 'Frequent flyers' },
-  { icon: '⚡', label: 'Tech enthusiasts' },
-  { icon: '🧭', label: 'Modern explorers' },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M3 18h18M3 18v-3l9-9 9 9v3M9 11l3-3 3 3"/>
+        <path d="M12 2L3 9l1.5 1.5L12 4l7.5 6.5L21 9z"/>
+      </svg>
+    ),
+    label: 'Business travelers'
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
+    label: 'Frequent flyers'
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    ),
+    label: 'Tech enthusiasts'
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>
+    ),
+    label: 'Modern explorers'
+  },
 ];
 
 export default function LifestyleSection() {
