@@ -12,6 +12,7 @@ import HowItWorksSection from '../components/HowItWorksSection';
 import LifestyleSection from '../components/LifestyleSection';
 import TrustSection from '../components/TrustSection';
 import CTASection from '../components/CTASection';
+import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,6 +37,7 @@ export default function HomePage() {
         <LifestyleSection />
         <TrustSection />
         <CTASection />
+        <ContactSection />
       </main>
       <Footer />
     </>
