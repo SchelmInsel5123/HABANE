@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import getImageUrl from '../lib/imageUtils';
 import './Navbar.css';
 
@@ -7,6 +7,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -14,10 +16,24 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <a href="#" className="navbar__logo" id="nav-logo">
+        <a href="#hero" className="navbar__logo" id="nav-logo" onClick={handleLogoClick}>
           <img src={getImageUrl('/Media/LOGOHABANE.png')} alt="HABÄNE" className="navbar__logo-img" />
           <span className="navbar__logo-text">HABÄNE</span>
         </a>
