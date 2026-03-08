@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import ExplorePage from './pages/ExplorePage';
 import ProductDetail from './pages/ProductDetail';
 import ImpressumPage from './pages/ImpressumPage';
+import ContactPage from './pages/ContactPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,6 +49,7 @@ export default function App() {
         <Route path="/Explore" element={<ExplorePage />} />
         <Route path="/Explore/:productId" element={<ProductDetail />} />
         <Route path="/impressum" element={<ImpressumPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );

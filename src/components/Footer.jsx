@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="footer__links-group">
             <h4 className="footer__links-title">Company</h4>
             <a href="#" className="footer__link">About Us</a>
-            <a href="#contact" className="footer__link">Contact</a>
+            <Link to="/contact" className="footer__link">Contact</Link>
             <a href="#" className="footer__link">Press</a>
           </div>
 

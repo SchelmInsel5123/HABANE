@@ -1,0 +1,14 @@
+.contact-page {
+  min-height: 100vh;
+  background: var(--color-bg-dark);
+}
+
+.contact-page__spacer {
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  .contact-page__spacer {
+    height: 80px;
+  }
+}
