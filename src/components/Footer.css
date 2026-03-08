@@ -120,9 +120,21 @@
   padding-top: 32px;
 }
 
+.footer__copyright-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .footer__copyright {
   font-size: 0.82rem;
   color: var(--color-text-muted);
+}
+
+.footer__disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  opacity: 0.7;
 }
 
 .footer__socials {
@@ -165,13 +177,18 @@
   .footer__top {
     grid-template-columns: 1fr;
   }
-  
+
   .footer__bottom {
     flex-direction: column;
     gap: 16px;
     text-align: center;
   }
-  
+
+  .footer__copyright-wrapper {
+    align-items: center;
+    text-align: center;
+  }
+
   .footer__form {
     flex-direction: column;
   }

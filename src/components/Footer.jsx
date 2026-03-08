@@ -69,9 +69,14 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p className="footer__copyright">
-            © 2026 HABÄNE. All rights reserved.
-          </p>
+          <div className="footer__copyright-wrapper">
+            <p className="footer__copyright">
+              © 2026 HABÄNE. All rights reserved.
+            </p>
+            <p className="footer__disclaimer">
+              Product visuals may represent prototypes or conceptual designs.
+            </p>
+          </div>
           <div className="footer__socials">
             <a href="#" className="footer__social" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
