@@ -6,6 +6,7 @@ import Lenis from 'lenis';
 
 import PageLoader from './components/PageLoader';
 import Navbar from './components/Navbar';
+import CookieBanner from './components/CookieBanner';
 import HomePage from './pages/HomePage';
 import ExplorePage from './pages/ExplorePage';
 import ProductDetail from './pages/ProductDetail';
@@ -57,6 +58,7 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
       </Routes>
+      <CookieBanner />
     </BrowserRouter>
   );
 }
