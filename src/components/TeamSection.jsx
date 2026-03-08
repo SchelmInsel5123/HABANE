@@ -35,20 +35,20 @@ export default function TeamSection() {
 
   const founders = [
     {
-      name: 'Dr. Michael Schmidt',
+      name: 'Arora, Abhishek',
       role: 'CEO & Co-Founder',
       bio: 'Former robotics engineer at BMW with 15 years of experience in AI-powered mobility solutions. Holds a PhD in Mechanical Engineering from TU Munich.',
       linkedin: '#'
     },
     {
-      name: 'Sarah Chen',
-      role: 'CTO & Co-Founder',
+      name: 'Arnst, Dima',
+      role: 'CMO & Co-Founder',
       bio: 'AI researcher and former lead engineer at Tesla. Specializes in autonomous systems and machine learning. MIT graduate with multiple patents in smart mobility.',
       linkedin: '#'
     },
     {
-      name: 'Lucas Hoffmann',
-      role: 'CPO & Co-Founder',
+      name: 'Tigranjan, Julian',
+      role: 'CTO & Co-Founder',
       bio: 'Industrial designer with a passion for merging technology and aesthetics. Previously designed premium luggage for luxury brands. Graduated from Bauhaus University.',
       linkedin: '#'
     }
