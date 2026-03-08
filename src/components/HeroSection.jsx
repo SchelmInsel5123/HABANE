@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useTranslation } from '../hooks/useTranslation';
 import getImageUrl from '../lib/imageUtils';
 import './HeroSection.css';
 
@@ -12,7 +11,6 @@ export default function HeroSection() {
   const heroRef = useRef(null);
   const productRef = useRef(null);
   const textRef = useRef(null);
-  const { t } = useTranslation();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -98,15 +96,16 @@ export default function HeroSection() {
       <div className="hero__content container">
         <div ref={textRef} className="hero__text">
           <div className="hero__reveal">
-            <span className="label">{t('hero.label')}</span>
+            <span className="label">Engineered in Germany</span>
           </div>
           <h1 className="hero__reveal headline-xl">
-            {t('hero.title')}<br/>
-            <span className="gold-text">{t('hero.titleHighlight')}</span><br/>
-            {t('hero.titleEnd')}
+            The World's First<br/>
+            <span className="gold-text">True AI Travel</span><br/>
+            Companion
           </h1>
           <p className="hero__reveal body-lg hero__description">
-            {t('hero.subtitle')}
+            Meet HABÄNE — the intelligent suitcase that moves with you, assists you,
+            and transforms the way you travel. Powered by advanced AI motion technology.
           </p>
 
           <div className="hero__reveal hero__features">
@@ -116,14 +115,14 @@ export default function HeroSection() {
                 <path d="M2 17l10 5 10-5"/>
                 <path d="M2 12l10 5 10-5"/>
               </svg>
-              <span>{t('hero.features.aiPowered')}</span>
+              <span>AI-Powered Motion</span>
             </div>
             <div className="hero__feature">
               <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                 <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
               </svg>
-              <span>{t('hero.features.smartLock')}</span>
+              <span>Smart Lock System</span>
             </div>
             <div className="hero__feature">
               <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -131,20 +130,20 @@ export default function HeroSection() {
                 <line x1="16" y1="8" x2="2" y2="22"/>
                 <line x1="17.5" y1="15" x2="9" y2="15"/>
               </svg>
-              <span>{t('hero.features.durable')}</span>
+              <span>Durable Polycarbonate</span>
             </div>
             <div className="hero__feature">
               <svg className="hero__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="10"/>
                 <polyline points="12 6 12 12 16 14"/>
               </svg>
-              <span>{t('hero.features.battery')}</span>
+              <span>10-Hour Battery Life</span>
             </div>
           </div>
 
           <div className="hero__reveal hero__ctas">
             <Link to="/Explore" className="btn btn-primary" id="hero-shop-btn">
-              {t('hero.shopNow')}
+              Shop Now
               <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -153,7 +152,7 @@ export default function HeroSection() {
               <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polygon points="5 3 19 12 5 21 5 3"/>
               </svg>
-              {t('hero.watchDemo')}
+              Watch Demo
             </a>
           </div>
         </div>
@@ -167,7 +166,7 @@ export default function HeroSection() {
 
       <div className="hero__scroll-indicator">
         <div className="hero__scroll-line"></div>
-        <span>{t('hero.scrollToExplore')}</span>
+        <span>Scroll to explore</span>
       </div>
     </section>
   );

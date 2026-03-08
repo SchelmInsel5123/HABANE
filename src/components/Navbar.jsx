@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useLanguage } from '../context/LanguageContext';
-import { useTranslation } from '../hooks/useTranslation';
 import getImageUrl from '../lib/imageUtils';
 import './Navbar.css';
 
@@ -11,8 +9,6 @@ export default function Navbar() {
   const navRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const { language, changeLanguage } = useLanguage();
-  const { t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -34,10 +30,6 @@ export default function Navbar() {
     }
   };
 
-  const toggleLanguage = () => {
-    changeLanguage(language === 'en' ? 'de' : 'en');
-  };
-
   return (
     <nav ref={navRef} className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
@@ -47,21 +39,14 @@ export default function Navbar() {
         </a>
 
         <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
-          <a href="#features" className="navbar__link" onClick={() => setMenuOpen(false)}>{t('nav.features')}</a>
-          <a href="#how-it-works" className="navbar__link" onClick={() => setMenuOpen(false)}>{t('nav.howItWorks')}</a>
-          <a href="#lifestyle" className="navbar__link" onClick={() => setMenuOpen(false)}>{t('nav.lifestyle')}</a>
-          <a href="#trust" className="navbar__link" onClick={() => setMenuOpen(false)}>{t('nav.about')}</a>
+          <a href="#features" className="navbar__link" onClick={() => setMenuOpen(false)}>Features</a>
+          <a href="#how-it-works" className="navbar__link" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="#lifestyle" className="navbar__link" onClick={() => setMenuOpen(false)}>Lifestyle</a>
+          <a href="#trust" className="navbar__link" onClick={() => setMenuOpen(false)}>About</a>
         </div>
 
         <div className="navbar__actions">
-          <button
-            onClick={toggleLanguage}
-            className="navbar__lang-btn"
-            aria-label="Switch language"
-          >
-            {language === 'en' ? 'DE' : 'EN'}
-          </button>
-          <Link to="/Explore" className="btn btn-primary navbar__cta" id="nav-shop-btn">{t('nav.shopNow')}</Link>
+          <Link to="/Explore" className="btn btn-primary navbar__cta" id="nav-shop-btn">Shop Now</Link>
         </div>
 
         <button

@@ -83,27 +83,6 @@
 .navbar__actions {
   display: flex;
   align-items: center;
-  gap: 16px;
-}
-
-.navbar__lang-btn {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--color-text-secondary);
-  background: transparent;
-  border: 1px solid var(--color-border);
-  padding: 8px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.05em;
-}
-
-.navbar__lang-btn:hover {
-  color: var(--color-text);
-  border-color: var(--color-gold);
-  background: rgba(212, 175, 55, 0.1);
 }
 
 .navbar__cta {
